@@ -1,0 +1,26 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+a{
+    position: absolute;
+    //top: 30%;
+    //left: 50%;
+    color:#FFF
+}
+
+/*a:hover{color:#0aF}*/
+
+#mouse_track_block {
+    position: absolute;
+    //border: 1px solid #ccc;
+    width: 150px;
+    height: 150px;
+    z-index:-1;
+    background-color: #03c03c;
+    opacity: 0.5;
+}

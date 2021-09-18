@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 3D旋转图片相册 可鼠标悬停</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="JS/echarts.min.js"></script>
+    <script src="JS/echarts-gl.min.js"></script>
+    <link rel="stylesheet" href="CSS/3DPhoto_style.css" />
+</head>
+
+<body>
+    <div class="Container">
+        <div id="carousel">
+            <figure><img class="rotatePic" src="images/img1.jpeg" alt=""></figure>
+            <figure><img class="rotatePic" src="images/img2.jpeg" alt=""></figure>
+            <figure><img class="rotatePic" src="images/img3.jpeg" alt=""></figure>
+            <figure><img class="rotatePic" src="images/img4.jpeg" alt=""></figure>
+            <figure><img class="rotatePic" src="images/img5.jpeg" alt=""></figure>
+            <figure><img class="rotatePic" src="images/img6.jpeg" alt=""></figure>
+            <div id="hardware">
+                <div id="cpu"></div>
+                <div id="storage"></div>
+                <div id="mem"></div>
+            </div>
+            <div id="dailynew"></div>
+            <div id="test2"></div>
+            <div id="test3"></div>
+            <div id="test4"></div>
+            <div id="test5"></div>
+            <pic id="sphere"></pic>
+        </div>
+    </div>
+
+    <script>
+        // 字体大小换算方法
+        let nowSize = function (val, initWidth = 1440) {
+            let nowClientWidth = $(window).width();
+            return Math.round(val * (nowClientWidth / initWidth));
+        };
+
+        var ROOT_PATH = 'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples';
+
+        var chartDom = document.getElementById('sphere');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            backgroundColor: 'none',
+            globe: {
+                baseTexture: ROOT_PATH + '/data-gl/asset/earth.jpg',
+
+                light: {
+                    ambient: {
+                        intensity: 1
+                    },
+                    main: {
+                        intensity: 0
+                    }
+                }
+            },
+            series: []
+        };
+        option && myChart.setOption(option);
+
+    </script>
+    <script src="JS/hardware.js"></script>
+    <script src="JS/dailynew.js"></script>
+</body>
+
+</html>
